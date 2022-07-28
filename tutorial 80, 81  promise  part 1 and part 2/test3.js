@@ -16,3 +16,5 @@ const promise1 = new Promise((resolve, reject) =>{
 promise1.then()
 
 console.log("end")
+
+//target for todays work promise will be done and async and awit will be complete
