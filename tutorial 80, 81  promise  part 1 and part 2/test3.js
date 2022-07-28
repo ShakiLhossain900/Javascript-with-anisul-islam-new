@@ -3,7 +3,7 @@ console.log("welcome");
 
 const promise1 = new Promise((resolve, reject) =>{
 
-  let completedPromise = true;
+  let completedPromise = false;
   if (completedPromise ){
     resolve("completed Promise 1");
   }
@@ -13,7 +13,16 @@ const promise1 = new Promise((resolve, reject) =>{
 
 });
 
-promise1.then()
+// console.log(promise1)
+
+promise1.then((res) => {
+  console.log(res)
+})
+.catch((err) => {
+  console.log(err)
+})
+
+
 
 console.log("end")
 
