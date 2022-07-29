@@ -1,31 +1,32 @@
 //promise chaining
-const taskOne = (callback) => {
-    console.log('Task 1');
-    callback();
+//async function 
+//Synchronous = happens at the same time. Asynchronous = doesn't happen at the same time
+const taskOne = () => {
+  return new Promise((resolve, reject) => {
+    resolve("task -> one is completed");
+  });
+};
+const taskTwo = () => {
+  return new Promise((resolve, reject) => {
+    resolve("task -> two is completed");
+  });
+};
+const taskThree = () => {
+  return new Promise((resolve, reject) => {
+    resolve("task -> Three is completed");
+  });
+};
+const taskFour = () => {
+  return new Promise((resolve, reject) => {
+    resolve("task -> Four is completed");
+  });
 };
 
-const taskTwo = (callback) => {
-        console.log('Task 2 ')
-        callback()
-}
-const taskThree = (callback) => {
-    console.log('Task 3');
-    callback();
-}
-const taskFour = (callback) => {
-    console.log('Task 4')
-    callback();
-}
-const taskFive = () => {
-    console.log('Task 5')
-}
-
-taskOne(()=>{
-    taskTwo(()=>{
-       taskThree(()=>{
-        taskFour(()=>{
-            taskFive();
-        })
-       })
-    })
-})
+taskOne()
+.then((res) => {console.log(res)})
+.then(taskTwo)
+.then(res => {console.log(res)})
+.then(taskThree)
+.then(res => {console.log(res)})
+.then(taskFour)
+.then(res => {console.log(res)})
