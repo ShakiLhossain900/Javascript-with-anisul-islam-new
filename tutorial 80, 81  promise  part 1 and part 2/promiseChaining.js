@@ -3,12 +3,14 @@
 //Synchronous = happens at the same time. Asynchronous = doesn't happen at the same time
 const taskOne = () => {
   return new Promise((resolve, reject) => {
-    resolve("task -> one is completed");
+    resolve("task -> one is not completed");
   });
 };
 const taskTwo = () => {
   return new Promise((resolve, reject) => {
-    resolve("task -> two is completed");
+     setTimeout(() =>{
+        resolve("task -> two is completed");
+     },2000)
   });
 };
 const taskThree = () => {
@@ -30,3 +32,4 @@ taskOne()
 .then(res => {console.log(res)})
 .then(taskFour)
 .then(res => {console.log(res)})
+.catch((error) => {console.log(error)})
