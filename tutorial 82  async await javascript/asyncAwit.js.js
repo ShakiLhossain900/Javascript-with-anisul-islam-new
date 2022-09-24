@@ -47,3 +47,5 @@ const callAllTasks = async () => {
 
 
 callAllTasks();
+
+//async
